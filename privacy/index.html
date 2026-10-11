@@ -17,9 +17,9 @@
   </header>
 
   <h1>Tally Mile Privacy Policy</h1>
-  <p class="meta">Effective September 30, 2026</p>
+  <p class="meta">Effective October 11, 2026</p>
 
-  <p class="callout">Tally Mile records your drives so you can claim every mile you're owed. Your drives, places, and receipts stay on your phone. There's no account, no ads, no analytics trackers, and nothing is ever sold.</p>
+  <p class="callout">Tally Mile records your drives so you can claim every mile you're owed. Your drives, places, and receipts are kept on your phone, and the backup copy is locked with your own Recovery Code before it leaves, so no one else can read it, including us. There's no account, no ads, no analytics trackers, and nothing is ever sold.</p>
 
   <h2>What Tally Mile uses, and why</h2>
   <div class="table-wrap">
@@ -27,6 +27,9 @@
     <tr><th>Data</th><th>Why</th><th>Where it goes</th></tr>
     <tr><td>Location (GPS)</td><td>Detects when a drive starts and ends, draws its route, and counts the miles without you doing anything.</td><td>Stored on your phone. Sent to your own Apple Watch, if you have one, directly from phone to watch.</td></tr>
     <tr><td>Map lookups</td><td>Finds a place you type or say, gets driving directions to your next stop, fills in street addresses for drives, and follows the road where GPS had no signal.</td><td>The places involved are sent to Apple Maps, which answers under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We never receive them.</td></tr>
+    <tr><td>Speed limits and road cautions</td><td>Shows the speed limit sign on the live drive map, points out railroad crossings, school zones, and other mapped hazards on the road ahead, and outlines the building at your next stop.</td><td>The area around your car or along your route is sent to OpenStreetMap's Overpass servers (overpass-api.de, with overpass.kumi.systems as a backup). They see the area being asked about, not who you are. Turn off <em>Speed limit sign</em> or <em>Road cautions</em> in Settings to stop these lookups.</td></tr>
+    <tr><td>Crash history on your route</td><td>Warns you about stretches of road where fatal crashes have happened (part of road cautions).</td><td>A few points along your route are sent to the FCC's free census lookup (geo.fcc.gov) to find which county they're in. Then only the state and county are sent to NHTSA's public crash records (crashviewer.nhtsa.dot.gov). Both are U.S. government services.</td></tr>
+    <tr><td>Recovery Code backup</td><td>Keeps a copy of your records off your phone, so a new or reset phone can get them back.</td><td>Once a day, and soon after a change, your drives, places, receipts, receipt photos, and settings are encrypted on your phone (AES-256) with your Recovery Code, then stored on our backup server (Supabase). The server holds only the locked copy and an ID made from the code. It never receives the code itself, so we can't open your backup. See <a href="#backup">Your Recovery Code backup</a> below.</td></tr>
     <tr><td>Microphone and speech</td><td>Lets you log a drive or add a stop by talking, only after you tap the microphone.</td><td>Speech is turned into text on your phone. The audio is not saved and is not sent anywhere.</td></tr>
     <tr><td>Camera and photos</td><td>Lets you attach a photo of a gas or repair receipt.</td><td>On your phone, only if you choose to add one.</td></tr>
     <tr><td>Diagnostics log</td><td>Keeps a short record of what drive detection saw (times, speeds, and app events, never locations) so a missed drive can be explained.</td><td>On your phone. It leaves only if you tap Send a report, and then only to whoever you choose to email or share it with.</td></tr>
@@ -46,11 +49,22 @@
   <h2>Where your data lives</h2>
   <p>Everything you record is kept in a database on your phone, the same way a notes app keeps your notes. The Home Screen widget and Lock Screen Live Activity read from it on the phone. If your iPhone backs up to iCloud, that backup can include this data under Apple's iCloud terms. Deleting Tally Mile deletes this data from your phone.</p>
 
+  <h2 id="backup">Your Recovery Code backup</h2>
+  <ul>
+    <li><strong>On by default.</strong> Turn it off any time in Settings › Backup › <em>Back Up with Recovery Code</em>.</li>
+    <li><strong>Locked on your phone.</strong> Everything is encrypted before it's sent, with a key made from your Recovery Code. Without the code, the backup can't be read, by us or anyone else.</li>
+    <li><strong>Where the code is kept.</strong> On your phone, and in iCloud Keychain (on Android, your Google account), so a new phone signed in to the same account can find it. You can also save or print it. Keep it somewhere safe: anyone with the code can restore your records.</li>
+    <li><strong>Deleting it.</strong> Settings › Backup › <em>Delete Backup from Server</em> removes the backup and every receipt photo in it from our server right away, and turns the backup off. <em>Make a New Code</em> backs up again under a new code and deletes the old backup.</li>
+    <li><strong>How long it's kept.</strong> Until you delete it. The backup is tied only to your Recovery Code, not to your name or email, so we can't look it up for you. Delete it from the app before you remove Tally Mile if you don't want it kept.</li>
+  </ul>
+
   <h2>Services we rely on</h2>
   <ul>
     <li><strong>Apple</strong>: App Store purchases, Apple Maps lookups, and, if you use them, iCloud backups.</li>
     <li><strong>RevenueCat</strong>: checks and manages Tally Mile Pro subscriptions.</li>
-    <li><strong>Supabase</strong>: our promo-code server. It never receives your locations, drives, or receipts.</li>
+    <li><strong>Supabase</strong>: our promo-code server, and where your Recovery Code backup is stored. It receives your records only after they're locked on your phone, and never your Recovery Code.</li>
+    <li><strong>OpenStreetMap</strong> (Overpass): speed limits, road cautions, and building outlines on the live drive map.</li>
+    <li><strong>FCC</strong> census lookup and <strong>NHTSA</strong> crash records: the county along your route and its fatal-crash history, for road cautions.</li>
   </ul>
 
   <h2>Children</h2>
@@ -61,7 +75,7 @@
 
   <div class="contact">
     <strong>Questions, or want something deleted?</strong>
-    <p style="margin:8px 0 0">Email <a href="mailto:dmcdonald0511@gmail.com">dmcdonald0511@gmail.com</a>. Since nearly everything lives on your phone, uninstalling the app removes it. We'll gladly help with the rest, including any promo-code record on our server.</p>
+    <p style="margin:8px 0 0">Email <a href="mailto:dmcdonald0511@gmail.com">dmcdonald0511@gmail.com</a>. Since nearly everything lives on your phone, uninstalling the app removes it. Delete a Recovery Code backup from the app (Settings › Backup › Delete Backup from Server) first if you don't want it kept. We'll gladly help with the rest, including any promo-code record on our server.</p>
   </div>
 
   <footer>© 2026 David McDonald · Tally Mile</footer>
