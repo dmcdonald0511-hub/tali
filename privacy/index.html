@@ -17,7 +17,7 @@
   </header>
 
   <h1>Tali Privacy Policy</h1>
-  <p class="meta">Last updated: October 11, 2026</p>
+  <p class="meta">Last updated: October 12, 2026</p>
 
   <p class="callout">Tali (formerly Tally Mile) records your drives so you can claim every mile you're owed. Your drives, places, pay, and receipts are kept on your phone, and the backup copy is locked with your own Recovery Code before it leaves, so no one else can read it, including us. The only things our server can read are what you share with a group (your name and latest location) and records of promo codes redeemed in earlier versions. There's no account, no ads, no analytics trackers, and nothing is ever sold.</p>
 
@@ -28,6 +28,8 @@
     <tr><td>Location (GPS)</td><td>Detects when a drive starts and ends, draws its route, and counts the miles without you doing anything.</td><td>Stored on your phone, and in your locked <a href="#backup">Recovery Code backup</a>. Tali shares it with other people only if you join a group (next row), or when you send it yourself with <em>Text My Location</em>.</td></tr>
     <tr><td>Group location sharing</td><td>Lets your family or crew see each other on a map. A Tali Pro feature, used only if you start or join a group.</td><td>Your name and your latest location (with its accuracy, speed, direction, and time) are sent to our server (Supabase) and shown to everyone in your group. See <a href="#group">Group location sharing</a> below.</td></tr>
     <tr><td>Map lookups</td><td>Finds a place you type, say, or read from a screenshot, gets driving directions to your next stop, fills in street addresses for drives, follows the road where GPS had no signal, and shows gas stations and street numbers on the map.</td><td>The places involved are sent to Apple Maps, which answers under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We never receive them. If you choose Google Maps or Waze for turn-by-turn directions, your stops are handed to that app.</td></tr>
+    <tr><td>Weather for Plan Your Week</td><td>Checks the forecast and official severe-weather warnings, so Plan Your Week can raise its estimate for rainy hours and leave out times under a warning. Only if you set a weekly goal.</td><td>A point rounded to about 7 miles around where you last parked is sent to the U.S. National Weather Service (weather.gov), a government service. Your exact location, drives, and pay never leave your phone for this.</td></tr>
+    <tr><td>Gas prices</td><td>Uses the week's average gas price for your part of the country in Car Costs, until you scan a gas receipt or type a price.</td><td>Tali downloads the government's public weekly averages (U.S. Energy Information Administration) and picks your area on your phone. Nothing about you is sent.</td></tr>
     <tr><td>Speed limits and road cautions</td><td>Shows the speed limit sign on the live drive map, points out railroad crossings, school zones, and other mapped hazards on the road ahead, and outlines the building at your next stop.</td><td>The area around your car or along your route is sent to OpenStreetMap's Overpass servers (overpass-api.de, with overpass.kumi.systems as a backup). They see the area being asked about, not who you are. Both are on to start; turn off <em>Speed limit sign</em> or <em>Road cautions</em> in Settings to stop these lookups.</td></tr>
     <tr><td>Crash history on your route</td><td>Warns you about stretches of road where fatal crashes have happened (part of road cautions).</td><td>A few points along your route are sent to the FCC's free census lookup (geo.fcc.gov) to find which county they're in. Then only the state and county are sent to NHTSA's public crash records (crashviewer.nhtsa.dot.gov). Both are U.S. government services.</td></tr>
     <tr><td>Recovery Code backup</td><td>Keeps a copy of your records off your phone, so a new or reset phone can get them back.</td><td>Once a day, and soon after a change, your records are encrypted on your phone (AES-256) with your Recovery Code, then stored on our backup server (Supabase). The server holds only the locked copy and an ID made from the code. It never receives the code itself, so we can't open your backup. See <a href="#backup">Your Recovery Code backup</a> below.</td></tr>
@@ -83,7 +85,9 @@
     <li><strong>Apple</strong>: App Store purchases, Apple Maps lookups, iCloud Keychain for your Recovery Code, and, if you use them, iCloud backups and Siri. When you use a Tali shortcut with Siri, Siri handles what you say under Apple's terms.</li>
     <li><strong>RevenueCat</strong>: checks and manages Tali Pro purchases.</li>
     <li><strong>Supabase</strong>: our server. It holds group locations while you share them, promo-code records, and your Recovery Code backup. It receives your records only after they're locked on your phone, and never your Recovery Code.</li>
-    <li><strong>OpenStreetMap</strong> (Overpass): speed limits, road cautions, and building outlines on the live drive map.</li>
+    <li><strong>OpenStreetMap</strong> (Overpass): speed limits, road cautions, and building outlines on the live drive map, and on Android, EV chargers on the map.</li>
+    <li><strong>National Weather Service</strong> (weather.gov): the forecast and warnings for Plan Your Week, for a rounded area only.</li>
+    <li><strong>U.S. Energy Information Administration</strong>: the public weekly average gas prices used in Car Costs. Nothing is sent to it.</li>
     <li><strong>FCC</strong> census lookup and <strong>NHTSA</strong> crash records: the county along your route and its fatal-crash history, for road cautions.</li>
   </ul>
 
