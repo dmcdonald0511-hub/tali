@@ -17,24 +17,31 @@
   </header>
 
   <h1>Tali Privacy Policy</h1>
-  <p class="meta">Effective October 11, 2026</p>
+  <p class="meta">Last updated: October 11, 2026</p>
 
-  <p class="callout">Tali records your drives so you can claim every mile you're owed. Your drives, places, and receipts are kept on your phone, and the backup copy is locked with your own Recovery Code before it leaves, so no one else can read it, including us. There's no account, no ads, no analytics trackers, and nothing is ever sold.</p>
+  <p class="callout">Tali (formerly Tally Mile) records your drives so you can claim every mile you're owed. Your drives, places, pay, and receipts are kept on your phone, and the backup copy is locked with your own Recovery Code before it leaves, so no one else can read it, including us. The only things our server can read are what you share with a group (your name and latest location) and records of promo codes redeemed in earlier versions. There's no account, no ads, no analytics trackers, and nothing is ever sold.</p>
 
   <h2>What Tali uses, and why</h2>
   <div class="table-wrap">
   <table>
     <tr><th>Data</th><th>Why</th><th>Where it goes</th></tr>
-    <tr><td>Location (GPS)</td><td>Detects when a drive starts and ends, draws its route, and counts the miles without you doing anything.</td><td>Stored on your phone. Sent to your own Apple Watch, if you have one, directly from phone to watch.</td></tr>
-    <tr><td>Map lookups</td><td>Finds a place you type or say, gets driving directions to your next stop, fills in street addresses for drives, and follows the road where GPS had no signal.</td><td>The places involved are sent to Apple Maps, which answers under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We never receive them.</td></tr>
-    <tr><td>Speed limits and road cautions</td><td>Shows the speed limit sign on the live drive map, points out railroad crossings, school zones, and other mapped hazards on the road ahead, and outlines the building at your next stop.</td><td>The area around your car or along your route is sent to OpenStreetMap's Overpass servers (overpass-api.de, with overpass.kumi.systems as a backup). They see the area being asked about, not who you are. Turn off <em>Speed limit sign</em> or <em>Road cautions</em> in Settings to stop these lookups.</td></tr>
+    <tr><td>Location (GPS)</td><td>Detects when a drive starts and ends, draws its route, and counts the miles without you doing anything.</td><td>Stored on your phone, and in your locked <a href="#backup">Recovery Code backup</a>. Tali shares it with other people only if you join a group (next row), or when you send it yourself with <em>Text My Location</em>.</td></tr>
+    <tr><td>Group location sharing</td><td>Lets your family or crew see each other on a map. A Tali Pro feature, used only if you start or join a group.</td><td>Your name and your latest location (with its accuracy, speed, direction, and time) are sent to our server (Supabase) and shown to everyone in your group. See <a href="#group">Group location sharing</a> below.</td></tr>
+    <tr><td>Map lookups</td><td>Finds a place you type, say, or read from a screenshot, gets driving directions to your next stop, fills in street addresses for drives, follows the road where GPS had no signal, and shows gas stations and street numbers on the map.</td><td>The places involved are sent to Apple Maps, which answers under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We never receive them. If you choose Google Maps or Waze for turn-by-turn directions, your stops are handed to that app.</td></tr>
+    <tr><td>Speed limits and road cautions</td><td>Shows the speed limit sign on the live drive map, points out railroad crossings, school zones, and other mapped hazards on the road ahead, and outlines the building at your next stop.</td><td>The area around your car or along your route is sent to OpenStreetMap's Overpass servers (overpass-api.de, with overpass.kumi.systems as a backup). They see the area being asked about, not who you are. Both are on to start; turn off <em>Speed limit sign</em> or <em>Road cautions</em> in Settings to stop these lookups.</td></tr>
     <tr><td>Crash history on your route</td><td>Warns you about stretches of road where fatal crashes have happened (part of road cautions).</td><td>A few points along your route are sent to the FCC's free census lookup (geo.fcc.gov) to find which county they're in. Then only the state and county are sent to NHTSA's public crash records (crashviewer.nhtsa.dot.gov). Both are U.S. government services.</td></tr>
-    <tr><td>Recovery Code backup</td><td>Keeps a copy of your records off your phone, so a new or reset phone can get them back.</td><td>Once a day, and soon after a change, your drives, places, receipts, receipt photos, and settings are encrypted on your phone (AES-256) with your Recovery Code, then stored on our backup server (Supabase). The server holds only the locked copy and an ID made from the code. It never receives the code itself, so we can't open your backup. See <a href="#backup">Your Recovery Code backup</a> below.</td></tr>
+    <tr><td>Recovery Code backup</td><td>Keeps a copy of your records off your phone, so a new or reset phone can get them back.</td><td>Once a day, and soon after a change, your records are encrypted on your phone (AES-256) with your Recovery Code, then stored on our backup server (Supabase). The server holds only the locked copy and an ID made from the code. It never receives the code itself, so we can't open your backup. See <a href="#backup">Your Recovery Code backup</a> below.</td></tr>
     <tr><td>Microphone and speech</td><td>Lets you log a drive or add a stop by talking, only after you tap the microphone.</td><td>Speech is turned into text on your phone. The audio is not saved and is not sent anywhere.</td></tr>
-    <tr><td>Camera and photos</td><td>Lets you attach a photo of a gas or repair receipt.</td><td>On your phone, only if you choose to add one.</td></tr>
-    <tr><td>Diagnostics log</td><td>Keeps a short record of what drive detection saw (times, speeds, and app events, never locations) so a missed drive can be explained.</td><td>On your phone. It leaves only if you tap Send a report, and then only to whoever you choose to email or share it with.</td></tr>
+    <tr><td>Camera, photos, and screenshots</td><td>Takes a photo of a gas or repair receipt, or scans your Recovery Code. You can also pick receipt photos, and screenshots of your earnings, an order's pay, or a list of stops.</td><td>Text in a photo or screenshot is read on your phone by Apple's built-in text recognition; nothing is uploaded to read it. Receipt photos are kept on your phone and in your locked backup. Screenshots aren't saved with your records, only what you confirm from them.</td></tr>
+    <tr><td>Motion &amp; Fitness</td><td>The missed-drive finder reads your iPhone's motion history (about the last week) to find car trips no drive covers. It's off until you turn it on in Settings.</td><td>On your phone only. What it finds is kept for 30 days and is not included in backups.</td></tr>
+    <tr><td>Emergency contacts and car details</td><td>Up to three people you pick from Contacts (name and number), your car's color and plate, and a roadside-help number, for the Emergency button.</td><td>On your phone and in your locked backup. Tali doesn't read the rest of your contacts. <em>Text My Location</em> opens Messages with your location (an Apple Maps link) and your car filled in; nothing is sent until you tap Send.</td></tr>
+    <tr><td>Pay and tax details</td><td>Pay and tips you enter or read from a screenshot, 1099 totals, car costs, and tax set-aside settings, for your pay per mile and tax figures.</td><td>On your phone and in your locked backup.</td></tr>
+    <tr><td>Edit history</td><td>Every drive keeps a record of when it was recorded and of each later change, so your log can show nothing was quietly altered.</td><td>On your phone and in your locked backup. Entries are never removed, so a deleted drive's details stay in the history.</td></tr>
+    <tr><td>Apple Watch, widget, and Lock Screen</td><td>Shows your current drive's miles, your next stop, the newest drive to sort (and where it ended), and your deduction.</td><td>Sent from your iPhone straight to your own Apple Watch, if you have one. The Home Screen widget and Lock Screen Live Activity read it on the phone.</td></tr>
+    <tr><td>Reports and backup files</td><td>Tax exports, spreadsheets, scheduled report emails, and backup files you save yourself.</td><td>Made on your phone. They leave only when you share, email, save, or print them, and only to where you choose. A backup file you save yourself is not locked with your Recovery Code, so keep it somewhere safe.</td></tr>
+    <tr><td>Diagnostics log</td><td>Keeps a short record of what drive detection saw (times, speeds, and app events, never locations) so a missed drive can be explained.</td><td>On your phone. It leaves only if you tap Send a report, and then only to whoever you choose to email or share it with. The report adds your phone model and iOS version.</td></tr>
     <tr><td>Purchase and subscription data</td><td>Confirms and manages a Tali Pro subscription.</td><td>Apple's App Store and our subscription service, RevenueCat, under their own privacy terms.</td></tr>
-    <tr><td>A random install ID</td><td>Stops a promo code from being redeemed twice on the same phone.</td><td>Sent to our promo-code server (Supabase) when you redeem a code. It isn't tied to your name or anything else about you, and it changes if you reinstall.</td></tr>
+    <tr><td>A random install ID</td><td>Made a promo code from an earlier version of Tali count once per phone.</td><td>Sent to our server (Supabase) only with a promo code redeemed in an earlier version; the current app doesn't take these codes. It isn't tied to your name or anything else about you. It's kept in your iPhone's Keychain, so it stays the same if you reinstall Tali on the same phone; a new or erased phone gets a new one.</td></tr>
   </table>
   </div>
 
@@ -43,26 +50,39 @@
     <li>No account or sign-in.</li>
     <li>No advertising, ad networks, or advertising identifiers.</li>
     <li>No analytics or tracking services.</li>
+    <li>No readable history of where you've been on our server. Your drives go there only inside your locked backup, and a group sees only your latest location.</li>
     <li>Your locations, drives, places, and receipts are never sold or shared with advertisers or data brokers.</li>
   </ul>
 
   <h2>Where your data lives</h2>
-  <p>Everything you record is kept in a database on your phone, the same way a notes app keeps your notes. The Home Screen widget and Lock Screen Live Activity read from it on the phone. If your iPhone backs up to iCloud, that backup can include this data under Apple's iCloud terms. Deleting Tali deletes this data from your phone.</p>
+  <p>Everything you record is kept in a database on your phone, the same way a notes app keeps your notes. The Home Screen widget and Lock Screen Live Activity read from it on the phone. If your iPhone backs up to iCloud, that backup can include this data under Apple's iCloud terms. Earlier versions of the app saved backups to your own iCloud Drive instead; Tali can still restore those but no longer adds to them, and they stay in your iCloud until you remove them.</p>
+  <p>Deleting Tali deletes this data from your phone. iOS keeps a few small items in the iPhone's Keychain after an app is deleted, so they come back if you reinstall: when your free trial started, a promo code you redeemed, the install ID, and your Recovery Code.</p>
+
+  <h2 id="group">Group location sharing</h2>
+  <ul>
+    <li><strong>Only if you choose it.</strong> Nothing is shared until you start or join a group on the Group tab and tap <em>Start sharing</em> or <em>Join and share</em>.</li>
+    <li><strong>What the group sees.</strong> The name you give, your latest location on a map, how long ago it was updated, and your speed while you're driving.</li>
+    <li><strong>When it's sent.</strong> All the time, including when you're not driving and when drive tracking is paused: up to every 30 seconds on the road, and every few minutes otherwise. It stops when you turn off <em>Share my location</em> or leave the group.</li>
+    <li><strong>What our server keeps.</strong> The group's name, each person's name, their latest location, and when their app last checked in. Each new location replaces the last one, so there's no history. Invite codes stop working after 7 days.</li>
+    <li><strong>Pausing and leaving.</strong> Turning off <em>Share my location</em> removes your location from the server. Leaving the group deletes your name and location, and a group is deleted when its last person leaves. The person who started a group can remove anyone from it.</li>
+    <li><strong>Before you delete Tali.</strong> Leave the group first. If your Tali Pro ends, or you delete Tali without leaving, your last shared location stays visible to the group until you leave or are removed.</li>
+  </ul>
 
   <h2 id="backup">Your Recovery Code backup</h2>
   <ul>
     <li><strong>On by default.</strong> Turn it off any time in Settings › Backup › <em>Back Up with Recovery Code</em>.</li>
-    <li><strong>Locked on your phone.</strong> Everything is encrypted before it's sent, with a key made from your Recovery Code. Without the code, the backup can't be read, by us or anyone else.</li>
-    <li><strong>Where the code is kept.</strong> On your phone, and in iCloud Keychain (on Android, your Google account), so a new phone signed in to the same account can find it. You can also save or print it. Keep it somewhere safe: anyone with the code can restore your records.</li>
+    <li><strong>What's in it.</strong> Your drives and their edit history, saved places, vehicles, pay, receipts and receipt photos, emergency contacts, and settings.</li>
+    <li><strong>Locked on your phone.</strong> Everything is encrypted before it's sent, with a key made from your Recovery Code. Without the code, the backup can't be read, by us or anyone else. Our server sees only locked files, their sizes, and when they were last updated.</li>
+    <li><strong>Where the code is kept.</strong> On your phone, and in iCloud Keychain (on Android, your Google account), so a new phone signed in to the same account can find it. You can also save, print, or share it. Keep it somewhere safe: anyone with the code can restore your records.</li>
     <li><strong>Deleting it.</strong> Settings › Backup › <em>Delete Backup from Server</em> removes the backup and every receipt photo in it from our server right away, and turns the backup off. <em>Make a New Code</em> backs up again under a new code and deletes the old backup.</li>
     <li><strong>How long it's kept.</strong> Until you delete it, or until it goes 12 months without being updated, whichever comes first. While backups are on, Tali updates it every day you drive or open the app, so it's only deleted after your phone has gone unused, or had backups turned off, for a year. When backups are off, Settings › Backup shows the date it will be deleted. The backup is tied only to your Recovery Code, not to your name or email, so we can't look it up for you. Delete it from the app before you remove Tali if you don't want it kept until then.</li>
   </ul>
 
   <h2>Services we rely on</h2>
   <ul>
-    <li><strong>Apple</strong>: App Store purchases, Apple Maps lookups, and, if you use them, iCloud backups.</li>
-    <li><strong>RevenueCat</strong>: checks and manages Tali Pro subscriptions.</li>
-    <li><strong>Supabase</strong>: our promo-code server, and where your Recovery Code backup is stored. It receives your records only after they're locked on your phone, and never your Recovery Code.</li>
+    <li><strong>Apple</strong>: App Store purchases, Apple Maps lookups, iCloud Keychain for your Recovery Code, and, if you use them, iCloud backups and Siri. When you use a Tali shortcut with Siri, Siri handles what you say under Apple's terms.</li>
+    <li><strong>RevenueCat</strong>: checks and manages Tali Pro purchases.</li>
+    <li><strong>Supabase</strong>: our server. It holds group locations while you share them, promo-code records, and your Recovery Code backup. It receives your records only after they're locked on your phone, and never your Recovery Code.</li>
     <li><strong>OpenStreetMap</strong> (Overpass): speed limits, road cautions, and building outlines on the live drive map.</li>
     <li><strong>FCC</strong> census lookup and <strong>NHTSA</strong> crash records: the county along your route and its fatal-crash history, for road cautions.</li>
   </ul>
@@ -75,7 +95,7 @@
 
   <div class="contact">
     <strong>Questions, or want something deleted?</strong>
-    <p style="margin:8px 0 0">Email <a href="mailto:dmcdonald0511@gmail.com">dmcdonald0511@gmail.com</a>. Since nearly everything lives on your phone, uninstalling the app removes it. Delete a Recovery Code backup from the app (Settings › Backup › Delete Backup from Server) first if you don't want it kept. We'll gladly help with the rest, including any promo-code record on our server.</p>
+    <p style="margin:8px 0 0">Email <a href="mailto:dmcdonald0511@gmail.com">dmcdonald0511@gmail.com</a>. Since nearly everything lives on your phone, uninstalling the app removes it. Before you do, leave any group, and delete your Recovery Code backup from the app (Settings › Backup › Delete Backup from Server) if you don't want it kept. We'll gladly help with the rest, including removing you from a group or deleting a promo-code record on our server.</p>
   </div>
 
   <footer>© 2026 David McDonald · Tali</footer>
